@@ -4,6 +4,10 @@ narmer
 .. image:: https://travis-ci.org/chrislit/narmer.svg
     :target: https://travis-ci.org/chrislit/narmer
 
+.. image:: https://readthedocs.org/projects/narmer/badge/?version=latest
+    :target: https://readthedocs.org/projects/narmer/?badge=latest
+    :alt: Documentation Status
+
 Narmer NLP/IR library
 Copyright 2015 by Christopher C. Little
 
