@@ -1,6 +1,9 @@
 narmer
 ======
 
+.. image :: https://travis-ci.org/chrislit/narmer.svg
+
+
 Narmer NLP/IR library
 Copyright 2015 by Christopher C. Little
 
