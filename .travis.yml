@@ -5,6 +5,7 @@ python:
 
 # Install packages
 install:
+  - travis_retry pip install abydos
   - travis_retry pip install coveralls
   - travis_retry python setup.py install
  
