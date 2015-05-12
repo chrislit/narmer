@@ -30,14 +30,14 @@ from __future__ import division
 import math
 
 
-def weissman(r, t, r_bar, t_bar, alpha=1):
+def weissman(r_tar, t_tar, r_src, t_src, alpha=1):
     """Return the Weissman score based on entered statistics
 
     Arguments:
-    r -- the target algorithm's compression ratio
-    t -- the target algorithm's compression time
-    r_bar -- a standard algorithm's compression ratio
-    t_bar -- a standard algorithm's compression time
+    r_tar -- the target algorithm's compression ratio
+    t_tar -- the target algorithm's compression time
+    r_src -- a standard algorithm's compression ratio
+    t_src -- a standard algorithm's compression time
     alpha -- a scaling constant (1 by default)
 
     The score is:
@@ -49,4 +49,4 @@ def weissman(r, t, r_bar, t_bar, alpha=1):
     Sources:
     http://spectrum.ieee.org/view-from-the-valley/computing/software/a-madefortv-compression-metric-moves-to-the-real-world
     """
-    return alpha * (r / r_bar) * (math.log(t_bar) / math.log(t))
+    return alpha * (r_tar / r_src) * (math.log(t_src) / math.log(t_tar))
