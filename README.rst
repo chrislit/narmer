@@ -15,7 +15,7 @@ Narmer
 .. image:: https://img.shields.io/badge/Pylint-9.6/10-green.svg
     :alt: Pylint Score
 
-.. image:: https://img.shields.io/badge/PEP8-29-yellowgreen.svg
+.. image:: https://img.shields.io/badge/PEP8-7-green.svg
     :alt: PEP8 Errors
 
 .. image:: https://readthedocs.org/projects/narmer/badge/?version=latest
