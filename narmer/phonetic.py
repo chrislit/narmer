@@ -30,10 +30,11 @@ import unicodedata
 import sys
 try:
     from metaphone3.metaphone3 import Metaphone3
-except ImportError: # pragma: no cover
+except ImportError:  # pragma: no cover
     # If there system lacks Metaphone3, that's fine, but Metaphone3 won't be
     # supported.
     pass
+
 
 def german_ipa(word):
     """Return the IPA transcription of a German word
@@ -53,7 +54,7 @@ def german_ipa(word):
     word = unicodedata.normalize('NFKC', _unicode(word.upper()))
     word = word.replace('ß', 'SS')
 
-    #word = ''.join([c for c in word if c in tuple('ABCDEFGIKLMNOPQRSTUVXYZ')])
+    # word = ''.join([c for c in word if c in set('ABCDEFGIKLMNOPQRSTUVXYZ')])
 
     ipa = ''
     last = len(word)-1
@@ -239,7 +240,7 @@ def metaphone3(word, maxlength=float('inf'), vowels=False, exact=False):
     None. The inclusion of this is for convenience to keep a consistent
     API for the full set of phonetic algorithms.
     """
-    if 'metaphone3.metaphone3' not in sys.modules: # pragma: no cover
+    if 'metaphone3.metaphone3' not in sys.modules:  # pragma: no cover
             return None
     m3 = Metaphone3()
     m3.set_encode_vowels(vowels)

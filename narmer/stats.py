@@ -42,9 +42,9 @@ def weissman(r, t, r_bar, t_bar, alpha=1):
 
     The score is:
     W = α * (r / r_bar) * (log(t_bar) / log(t))
-    
-    In practice, the score can be used to rate time-intensive tasks on the basis
-    of other metrics, also, e.g. F_1 score.
+
+    In practice, the score can be used to rate time-intensive tasks on the
+    basis of other metrics, also, e.g. F_1 score.
 
     Sources:
     http://spectrum.ieee.org/view-from-the-valley/computing/software/a-madefortv-compression-metric-moves-to-the-real-world
