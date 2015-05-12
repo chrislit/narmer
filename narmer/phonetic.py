@@ -241,11 +241,11 @@ def metaphone3(word, maxlength=float('inf'), vowels=False, exact=False):
     API for the full set of phonetic algorithms.
     """
     if 'metaphone3.metaphone3' not in sys.modules:  # pragma: no cover
-            return None
-    m3 = Metaphone3()
-    m3.set_encode_vowels(vowels)
-    m3.set_encode_exact(exact)
-    m3.set_key_length(maxlength)
-    m3.set_word(word)
-    m3.encode()
-    return (m3.get_metaph(), m3.get_alternate_metaph())
+        return None
+    met3 = Metaphone3()
+    met3.set_encode_vowels(vowels)
+    met3.set_encode_exact(exact)
+    met3.set_key_length(maxlength)
+    met3.set_word(word)
+    met3.encode()
+    return (met3.get_metaph(), met3.get_alternate_metaph())
