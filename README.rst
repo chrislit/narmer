@@ -1,8 +1,22 @@
-narmer
+Narmer
 ======
 
 .. image:: https://travis-ci.org/chrislit/narmer.svg
     :target: https://travis-ci.org/chrislit/narmer
+
+.. image:: https://coveralls.io/repos/chrislit/narmer/badge.svg
+    :target: https://coveralls.io/r/chrislit/narmer
+    :alt: Coverage Status
+
+.. image:: https://codeclimate.com/github/chrislit/narmer/badges/gpa.svg
+   :target: https://codeclimate.com/github/chrislit/narmer
+   :alt: Code Climate
+
+.. image:: https://img.shields.io/badge/Pylint-9.61/10-green.svg
+    :alt: Pylint Score
+
+.. image:: https://img.shields.io/badge/PEP8-29-yellowgreen.svg
+    :alt: PEP8 Errors
 
 .. image:: https://readthedocs.org/projects/narmer/badge/?version=latest
     :target: https://readthedocs.org/projects/narmer/?badge=latest
@@ -13,11 +27,12 @@ Copyright 2015 by Christopher C. Little
 
 This library contains code I'm using for research, in particular dissertation research & experimentation.
 
-Recommended:
+Suggested for testing & QA
 
 - Nose        (for unit testing)
 - coverage.py (for code coverage checking)
 - Pylint      (for code quality checking)
+- PEP8        (for code quality checking)
 
 -----
 
