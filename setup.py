@@ -15,7 +15,7 @@ def readfile(fn):
 setup(
       name='narmer',
       packages=find_packages(exclude=['tests*']),
-      version='0.1.1',
+      version='0.1.2',
       description='Narmer Experimental NLP/IR library for Python',
       author='Christopher C. Little',
       author_email='chrisclittle+narmer@gmail.com',
