@@ -6,3 +6,9 @@ Release History
 
 First Pre-Alpha commits to GitHub
 
+
+0.1.1 (2015-05-12)
+++++++++++++++++++
+
+First Alpha release to PyPI
+

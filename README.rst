@@ -18,16 +18,27 @@ Narmer
 .. image:: https://img.shields.io/badge/PEP8-0-brightgreen.svg
     :alt: PEP8 Errors
 
+.. image:: https://img.shields.io/pypi/v/narmer.svg
+    :target: https://pypi.python.org/pypi/narmer
+    :alt: PyPI
+
 .. image:: https://readthedocs.org/projects/narmer/badge/?version=latest
     :target: https://readthedocs.org/projects/narmer/?badge=latest
     :alt: Documentation Status
 
-Narmer NLP/IR library
-Copyright 2015 by Christopher C. Little
+.. image:: https://www.openhub.net/p/narmer/widgets/project_thin_badge.gif
+    :target: https://www.openhub.net/p/narmer
+    :alt: OpenHUB
+
+|
+
+|
+| Narmer Experimental NLP/IR library
+| Copyright 2015 by Christopher C. Little
 
 This library contains code I'm using for research, in particular dissertation research & experimentation.
 
-Suggested for testing & QA
+Suggested for testing & QA:
 
 - Nose        (for unit testing)
 - coverage.py (for code coverage checking)
@@ -35,6 +46,12 @@ Suggested for testing & QA
 - PEP8        (for code quality checking)
 
 -----
+
+To install from PyPI:
+
+::
+
+    pip install narmer
 
 To build/install/unittest in Python 2:
 

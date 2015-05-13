@@ -15,7 +15,7 @@ def readfile(fn):
 setup(
       name='narmer',
       packages=find_packages(exclude=['tests*']),
-      version='0.1.0',
+      version='0.1.1',
       description='Narmer Experimental NLP/IR library for Python',
       author='Christopher C. Little',
       author_email='chrisclittle+narmer@gmail.com',
@@ -35,6 +35,8 @@ setup(
         'Environment :: Other Environment',
         'Intended Audience :: Developers',
         'Operating System :: OS Independent',
+        'License :: OSI Approved :: GNU General Public License v3 or later \
+(GPLv3+)',
         'Topic :: Scientific/Engineering :: Artificial Intelligence',
         'Topic :: Software Development :: Libraries :: Python Modules',
         'Topic :: Text Processing :: Indexing',
