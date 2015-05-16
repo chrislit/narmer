@@ -3,7 +3,6 @@
 
 The phonetic module implements phonetic algorithms including:
     german_ipa
-    Metaphone3
 
 
 Copyright 2015 by Christopher C. Little.
@@ -27,13 +26,6 @@ from __future__ import unicode_literals
 from __future__ import division
 from abydos._compat import _unicode, _range
 import unicodedata
-import sys
-try:
-    from metaphone3.metaphone3 import Metaphone3
-except ImportError:  # pragma: no cover
-    # If there system lacks Metaphone3, that's fine, but Metaphone3 won't be
-    # supported.
-    pass
 
 
 def german_ipa(word):
@@ -222,30 +214,3 @@ def german_ipa(word):
             ipa += 'y'
 
     return ipa
-
-
-def metaphone3(word, maxlength=float('inf'), vowels=False, exact=False):
-    """Return the Metaphone3 encodings of a word as a tuple
-
-    Arguments:
-    word -- the word to apply the Metaphone3 algorithm to
-    maxlength -- the maximum length of the returned Metaphone3 codes
-        (defaults to unlimited though it is 8 by default in Metaphone3)
-    vowels -- boolean indicating whether vowels are included in the encoding
-    exact -- boolean indicating whether to use the exact vs. approximate
-        encodings
-
-    Description:
-    This requires a metaphone3 Python library, without which this returns
-    None. The inclusion of this is for convenience to keep a consistent
-    API for the full set of phonetic algorithms.
-    """
-    if 'metaphone3.metaphone3' not in sys.modules:  # pragma: no cover
-        return None
-    met3 = Metaphone3()
-    met3.set_encode_vowels(vowels)
-    met3.set_encode_exact(exact)
-    met3.set_key_length(maxlength)
-    met3.set_word(word)
-    met3.encode()
-    return (met3.get_metaph(), met3.get_alternate_metaph())
