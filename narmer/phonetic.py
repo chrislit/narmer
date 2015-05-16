@@ -41,12 +41,13 @@ def german_ipa(word):
     No significant attempt is made to accomodate loanwords.
     """
     # pylint: disable=too-many-branches
-    _vowels = tuple('AEIOUYÄÖÜ')
+    _vowels = frozenset('AEIOUYÄÖÜ')
 
     word = unicodedata.normalize('NFKC', _unicode(word.upper()))
     word = word.replace('ß', 'SS')
 
-    # word = ''.join([c for c in word if c in set('ABCDEFGIKLMNOPQRSTUVXYZ')])
+    # word = ''.join([c for c in word if c in
+    #                 frozenset('ABCDEFGIKLMNOPQRSTUVXYZ')])
 
     ipa = ''
     last = len(word)-1
@@ -57,7 +58,7 @@ def german_ipa(word):
             continue
 
         # Consonants
-        if word[i] in 'BFJKLMR':
+        if word[i] in frozenset('BFJKLMR'):
             ipa += word[i].lower()
         elif word[i] == 'C':
             if word[i:i+2] == 'CH':
@@ -67,7 +68,7 @@ def german_ipa(word):
                 elif word[i:i+4] == 'CHEN':
                     ipa += 'ç'
                     skip = 1
-                elif i-1 >= 0 and word[i-1] in tuple('AOU'):
+                elif i-1 >= 0 and word[i-1] in frozenset('AOU'):
                     ipa += 'x'
                     skip = 1
                 else:
@@ -76,7 +77,7 @@ def german_ipa(word):
             elif word[i:i+2] == 'CK':
                 ipa += 'k'
                 skip = 1
-            elif i != last and word[i+1] in tuple('ÄEI'):
+            elif i != last and word[i+1] in frozenset('ÄEI'):
                 ipa += 'ts'
             else:
                 ipa += 'k'
@@ -125,7 +126,7 @@ def german_ipa(word):
             elif word[i:i+3] == 'SCH':
                 ipa += 'ʃ'
                 skip = 2
-            elif i == 0 and i != last and word[i+1] in tuple('PT'):
+            elif i == 0 and i != last and word[i+1] in frozenset('PT'):
                 ipa += 'ʃ'
             elif i != last and word[i+1] in _vowels:
                 ipa += 'z'
@@ -165,10 +166,10 @@ def german_ipa(word):
 
         # Vowels -- little attention is paid to length or tenseness
         # -Diphthongs first
-        elif word[i:i+2] in tuple(('EI', 'AI', 'EY', 'AY')):
+        elif word[i:i+2] in frozenset(['EI', 'AI', 'EY', 'AY']):
             ipa += 'ai'
             skip = 1
-        elif word[i:i+2] in tuple(('EU', 'ÄU')):
+        elif word[i:i+2] in frozenset(['EU', 'ÄU']):
             ipa += 'oy'
             skip = 1
         elif word[i:i+2] == 'AU':
@@ -177,21 +178,21 @@ def german_ipa(word):
 
         # -Monophthongs following
         elif word[i] == 'A':
-            if word[i:i+2] in tuple(('AA', 'AH')):
+            if word[i:i+2] in frozenset(['AA', 'AH']):
                 skip = 1
             ipa += 'a'
         elif word[i] == 'E':
-            if word[i:i+2] in tuple(('EE', 'EH')):
+            if word[i:i+2] in frozenset(['EE', 'EH']):
                 skip = 1
             ipa += 'e'
         elif word[i] == 'I':
-            if word[i:i+2] in tuple(('IE', 'IH')):
+            if word[i:i+2] in frozenset(['IE', 'IH']):
                 skip = 1
             if word[i:i+3] == 'IEH':
                 skip = 2
             ipa += 'i'
         elif word[i] == 'O':
-            if word[i:i+2] in tuple(('OO', 'OH')):
+            if word[i:i+2] in frozenset(['OO', 'OH']):
                 skip = 1
             ipa += 'o'
         elif word[i] == 'U':
