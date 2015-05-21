@@ -19,10 +19,9 @@
 """narmer.stats
 
 The stats module defines functions for calculating various statistical data
-about linguistic objects.
+about linguistic objects, including:
 
-Currently implements:
-    Weissman score calculation
+    - Weissman score calculation
 """
 
 from __future__ import unicode_literals
@@ -30,23 +29,25 @@ from __future__ import division
 import math
 
 
-def weissman(r_tar, t_tar, r_src, t_src, alpha=1):
-    """Return the Weissman score based on entered statistics
-
-    Arguments:
-    r_tar -- the target algorithm's compression ratio
-    t_tar -- the target algorithm's compression time
-    r_src -- a standard algorithm's compression ratio
-    t_src -- a standard algorithm's compression time
-    alpha -- a scaling constant (1 by default)
+def weissman(r_tar, t_tar, r_src, t_src, alpha=1.0):
+    """Weissman score based on entered statistics
 
     The score is:
-    W = α * (r / r_bar) * (log(t_bar) / log(t))
+    :math:`W = α \\cdot \\frac{r_{tar}}{r_{src}} \\cdot
+    \\frac{log t_{src}}{log t_{tar}}`
 
     In practice, the score can be used to rate time-intensive tasks on the
-    basis of other metrics, also, e.g. F_1 score.
+    basis of other metrics, also, e.g. :math:`F_1` score.
 
     Sources:
     http://spectrum.ieee.org/view-from-the-valley/computing/software/a-madefortv-compression-metric-moves-to-the-real-world
+
+    :param float r_tar: the target algorithm's compression ratio
+    :param float t_tar: the target algorithm's compression time
+    :param float r_src: a standard algorithm's compression ratio
+    :param float t_src: a standard algorithm's compression time
+    :param float alpha: a scaling constant (1.0 by default)
+    :returns: the Weissman score
+    :rtype: float
     """
     return alpha * (r_tar / r_src) * (math.log(t_src) / math.log(t_tar))

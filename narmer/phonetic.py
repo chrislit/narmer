@@ -19,7 +19,8 @@
 """narmer.phonetic
 
 The phonetic module implements phonetic algorithms including:
-    german_ipa
+
+    - german_ipa
 """
 
 from __future__ import unicode_literals
@@ -29,16 +30,16 @@ import unicodedata
 
 
 def german_ipa(word):
-    """Return the IPA transcription of a German word
+    """German to IPA
 
-    Arguments:
-    word -- the German word to transcribe to IPA
-
-    Description:
     This is based largely on the orthographic mapping described at:
     https://en.wikipedia.org/wiki/German_orthography
 
     No significant attempt is made to accomodate loanwords.
+
+    :param str word: the German word to transcribe to IPA
+    :returns: the German word's approximate IPA equivalent
+    :rtype: str
     """
     # pylint: disable=too-many-branches
     _vowels = frozenset('AEIOUYÄÖÜ')
