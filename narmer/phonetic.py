@@ -29,16 +29,45 @@ from abydos._compat import _unicode, _range
 import unicodedata
 
 
-def german_ipa(word):
+def german_ipa(word, period="nhg"):
     """German to IPA
+
+    Wrapper for other, more specific functions to convert
+    German of various periods to IPA.
+
+    :param str word: the German word to transcribe to IPA
+    :param str period: a period of German from the set:
+
+        - nhg (default) -- New High German
+        - enhg -- Early New High German
+        - mhg -- Middle High German
+        - ohg -- Old High German
+
+    :returns: the German word's approximate IPA equivalent
+    :rtype: str
+    """
+    period_map = {'nhg': nhg_ipa,
+                  'enhg': enhg_ipa,
+                  'mhg': mhg_ipa,
+                  'ohg': ohg_ipa}
+
+    period = period.lower()
+    if period not in period_map:
+        raise ValueError('Value of period must be one of ' +
+                         ', '.join(period_map.keys()))
+    else:
+        return period_map[period](word)
+
+def nhg_ipa(word):
+    """New High German to IPA
 
     This is based largely on the orthographic mapping described at:
     https://en.wikipedia.org/wiki/German_orthography
 
-    No significant attempt is made to accomodate loanwords.
+    No significant attempt is made to accommodate loanwords.
 
-    :param str word: the German word to transcribe to IPA
-    :returns: the German word's approximate IPA equivalent
+    :param str word: the NHG word to transcribe to IPA
+    :returns: the NHG word's approximate IPA equivalent
     :rtype: str
     """
     # pylint: disable=too-many-branches
@@ -214,5 +243,53 @@ def german_ipa(word):
             if word[i:i+2] == 'ÜH':
                 skip = 1
             ipa += 'y'
+
+    return ipa
+
+def enhg_ipa(word):
+    """Early New High German to IPA
+
+    This is based on TODO
+
+    :param str word: the ENHG word to transcribe to IPA
+    :returns: the ENHG word's approximate IPA equivalent
+    :rtype: str
+    """
+    word = unicodedata.normalize('NFKC', _unicode(word.upper()))
+
+    ipa = ''
+    last = len(word)-1
+
+    return ipa
+
+def mhg_ipa(word):
+    """Middle High German to IPA
+
+    This is based on TODO
+
+    :param str word: the ENHG word to transcribe to IPA
+    :returns: the ENHG word's approximate IPA equivalent
+    :rtype: str
+    """
+    word = unicodedata.normalize('NFKC', _unicode(word.upper()))
+
+    ipa = ''
+    last = len(word)-1
+
+    return ipa
+
+def ohg_ipa(word):
+    """Old High German to IPA
+
+    This is based on TODO
+
+    :param str word: the ENHG word to transcribe to IPA
+    :returns: the ENHG word's approximate IPA equivalent
+    :rtype: str
+    """
+    word = unicodedata.normalize('NFKC', _unicode(word.upper()))
+
+    ipa = ''
+    last = len(word)-1
 
     return ipa

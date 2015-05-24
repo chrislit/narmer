@@ -12,10 +12,10 @@ Narmer
    :target: https://codeclimate.com/github/chrislit/narmer
    :alt: Code Climate
 
-.. image:: https://img.shields.io/badge/Pylint-10.0/10-brightgreen.svg
+.. image:: https://img.shields.io/badge/Pylint-9.67/10-green.svg
     :alt: Pylint Score
 
-.. image:: https://img.shields.io/badge/PEP8-0-brightgreen.svg
+.. image:: https://img.shields.io/badge/PEP8-4-green.svg
     :alt: PEP8 Errors
 
 .. image:: https://img.shields.io/pypi/v/narmer.svg
