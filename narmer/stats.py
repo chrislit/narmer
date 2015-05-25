@@ -29,6 +29,7 @@ from __future__ import division
 import math
 import sys
 
+
 def weissman(r_tar, t_tar, r_src, t_src, alpha=1.0):
     """Weissman score based on entered statistics
 
@@ -58,7 +59,7 @@ def weissman(r_tar, t_tar, r_src, t_src, alpha=1.0):
         return alpha * (r_tar / r_src)
     elif t_tar == 1:
         # if t_tar == 1, add epsilon to avoid division by log(1) = 0
-        t_tar += sys.float_info.epsilon 
+        t_tar += sys.float_info.epsilon
 
     if r_src == r_tar:
         return alpha * (math.log(t_src) / math.log(t_tar))

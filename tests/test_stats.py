@@ -26,6 +26,7 @@ import unittest
 from narmer.stats import weissman
 import math
 
+
 class WeissmanTestCases(unittest.TestCase):
     """test cases for abydos.stats.weissman
     """

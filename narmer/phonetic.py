@@ -58,6 +58,7 @@ def german_ipa(word, period="nhg"):
     else:
         return period_map[period](word)
 
+
 def nhg_ipa(word):
     """New High German to IPA
 
@@ -246,6 +247,7 @@ def nhg_ipa(word):
 
     return ipa
 
+
 def enhg_ipa(word):
     """Early New High German to IPA
 
@@ -262,6 +264,7 @@ def enhg_ipa(word):
 
     return ipa
 
+
 def mhg_ipa(word):
     """Middle High German to IPA
 
@@ -277,6 +280,7 @@ def mhg_ipa(word):
     last = len(word)-1
 
     return ipa
+
 
 def ohg_ipa(word):
     """Old High German to IPA
