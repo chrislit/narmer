@@ -569,14 +569,23 @@ def mhg_ipa(word):
 
         # Vowels -- little attention is paid to length or tenseness
         # -Diphthongs first
-        elif word[i:i+2] in frozenset(['EI', 'AI', 'EY', 'AY']):
+        elif word[i:i+2] in frozenset(['EI', 'EY']):
+            ipa += 'ei'
+            skip = 1
+        elif word[i:i+2] in frozenset(['AI', 'AY']):
             ipa += 'ai'
             skip = 1
-        elif word[i:i+2] in frozenset(['EU', 'ÄU']):
-            ipa += 'oy'
+        elif word[i:i+2] == 'IE':
+            ipa += 'ie'
             skip = 1
         elif word[i:i+2] == 'AU':
             ipa += 'au'
+            skip = 1
+        elif word[i:i+2] == 'ÜE':
+            ipa += 'yu'
+            skip = 1
+        elif word[i:i+2] in frozenset(['ÖU', 'EU', 'OI']):
+            ipa += 'øy'
             skip = 1
 
         # -Monophthongs following
@@ -589,7 +598,7 @@ def mhg_ipa(word):
                 skip = 1
             ipa += 'e'
         elif word[i] == 'I':
-            if word[i:i+2] in frozenset(['IE', 'IH']):
+            if word[i:i+2] in frozenset(['IH']):
                 skip = 1
             if word[i:i+3] == 'IEH':
                 skip = 2
