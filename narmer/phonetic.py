@@ -201,7 +201,7 @@ def nhg_ipa(word):
             ipa += 'ai'
             skip = 1
         elif word[i:i+2] in frozenset(['EU', 'ÄU']):
-            ipa += 'oy'
+            ipa += 'øy'
             skip = 1
         elif word[i:i+2] == 'AU':
             ipa += 'au'
@@ -387,7 +387,7 @@ def enhg_ipa(word):
             ipa += 'ai'
             skip = 1
         elif word[i:i+2] in frozenset(['EU', 'ÄU']):
-            ipa += 'oy'
+            ipa += 'øy'
             skip = 1
         elif word[i:i+2] == 'AU':
             ipa += 'au'
@@ -768,7 +768,7 @@ def ohg_ipa(word):
             ipa += 'ai'
             skip = 1
         elif word[i:i+2] in frozenset(['EU', 'ÄU']):
-            ipa += 'oy'
+            ipa += 'øy'
             skip = 1
         elif word[i:i+2] == 'AU':
             ipa += 'au'
