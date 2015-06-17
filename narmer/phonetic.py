@@ -437,7 +437,7 @@ def enhg_ipa(word):
 def mhg_ipa(word):
     """Middle High German to IPA
 
-    This is based on TODO
+    This is based on http://users.clas.ufl.edu/hasty/resources/CHAPTER1.HTM
 
     :param str word: the ENHG word to transcribe to IPA
     :returns: the ENHG word's approximate IPA equivalent
@@ -468,14 +468,8 @@ def mhg_ipa(word):
                 if word[i:i+3] == 'CHS':
                     ipa += 'ks'
                     skip = 2
-                elif word[i:i+4] == 'CHEN':
-                    ipa += 'ç'
-                    skip = 1
-                elif i-1 >= 0 and word[i-1] in frozenset('AOU'):
-                    ipa += 'x'
-                    skip = 1
                 else:
-                    ipa += 'ç'
+                    ipa += 'x'
                     skip = 1
             elif word[i:i+2] == 'CK':
                 ipa += 'k'
@@ -495,7 +489,7 @@ def mhg_ipa(word):
                 ipa += 'd'
         elif word[i] == 'G':
             if i-1 >= 0 and word[i-1] == 'I':
-                ipa += 'ç'
+                ipa += 'g'
             else:
                 ipa += 'g'
         elif word[i] == 'H':
@@ -503,7 +497,7 @@ def mhg_ipa(word):
             ipa += 'h'
         elif word[i] == 'N':
             if word[i:i+2] == 'NG':
-                ipa += 'ŋ'
+                ipa += 'ŋg'
                 skip = 1
             elif word[i:i+2] == 'NK':
                 ipa += 'ŋk'
