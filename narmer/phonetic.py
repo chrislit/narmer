@@ -449,6 +449,9 @@ def mhg_ipa(word):
     word = unicodedata.normalize('NFKC', _unicode(word.upper()))
     word = word.replace('ß', 'SS')
 
+    for ch_from, ch_to in zip('ÂÊÎÔÛ', 'ĀĒĪŌŪ'):
+        word = word.replace(ch_from, ch_to)
+
     # word = ''.join([c for c in word if c in
     #                 frozenset('ABCDEFGIKLMNOPQRSTUVXYZ')])
 
