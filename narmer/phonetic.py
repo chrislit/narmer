@@ -586,41 +586,62 @@ def mhg_ipa(word):
             skip = 1
 
         # -Monophthongs following
+        # ĀĒ
+        elif word[i] == 'Ā':
+            ipa += 'aː'
+        elif word[i:i+2] == 'AA':
+            skip = 1
+            ipa += 'aː'
         elif word[i] == 'A':
-            if word[i:i+2] in frozenset(['AA', 'AH']):
-                skip = 1
             ipa += 'a'
+        elif word[i] == 'Ē':
+            ipa += 'eː'
+        elif word[i:i+2] == 'EE':
+            skip = 1
+            ipa += 'eː'
         elif word[i] == 'E':
-            if word[i:i+2] in frozenset(['EE', 'EH']):
-                skip = 1
             ipa += 'e'
+        elif word[i] == 'Ī':
+            ipa += 'iː'
+        elif word[i:i+2] == 'II':
+            skip = 1
+            ipa += 'iː'
         elif word[i] == 'I':
-            if word[i:i+2] in frozenset(['IH']):
-                skip = 1
-            if word[i:i+3] == 'IEH':
-                skip = 2
             ipa += 'i'
+        elif word[i] == 'Ō':
+            ipa += 'oː'
+        elif word[i:i+2] == 'OO':
+            skip = 1
+            ipa += 'oː'
         elif word[i] == 'O':
-            if word[i:i+2] in frozenset(['OO', 'OH']):
-                skip = 1
             ipa += 'o'
+        elif word[i] == 'Ū':
+            ipa += 'uː'
+        elif word[i:i+2] == 'UU':
+            skip = 1
+            ipa += 'uː'
         elif word[i] == 'U':
-            if word[i:i+2] == 'UH':
-                skip = 1
             ipa += 'u'
         elif word[i] == 'Y':
             ipa += 'y'
+        elif word[i] == 'Æ':
+            ipa += 'ɛː'
+        elif word[i:i+2] == 'AE':
+            skip = 1
+            ipa += 'ɛː'
         elif word[i] == 'Ä':
-            if word[i:i+2] == 'ÄH':
-                skip = 1
-            ipa += 'e'
+            ipa += 'ɛ'
+        elif word[i] == 'Œ':
+            ipa += 'øː'
+        elif word[i:i+2] == 'OE':
+            skip = 1
+            ipa += 'øː'
         elif word[i] == 'Ö':
-            if word[i:i+2] == 'ÖH':
-                skip = 1
             ipa += 'ø'
+        elif word[i:i+2] == 'IU':
+            skip = 1
+            ipa += 'yː'
         elif word[i] == 'Ü':
-            if word[i:i+2] == 'ÜH':
-                skip = 1
             ipa += 'y'
 
     return ipa
