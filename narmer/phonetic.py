@@ -507,7 +507,7 @@ def mhg_ipa(word):
                 ipa += 'n'
         elif word[i] == 'P':
             if word[i:i+2] == 'PH':
-                ipa += 'f'
+                ipa += 'pf'
                 skip = 1
             else:
                 ipa += 'p'
