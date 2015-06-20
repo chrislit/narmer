@@ -464,7 +464,7 @@ def mhg_ipa(word):
             continue
 
         # Consonants
-        if word[i] in frozenset('BFJKLMR'):
+        if word[i] in frozenset('BFJKLMRW'):
             ipa += word[i].lower()
         elif word[i] == 'C':
             if word[i:i+2] == 'CH':
@@ -524,6 +524,9 @@ def mhg_ipa(word):
             elif word[i:i+3] == 'SCH':
                 ipa += 'ʃ'
                 skip = 2
+            elif word[i:i+2] in frozenset(['sc', 'sk']):
+                ipa += 'ʃ'
+                skip = 1
             elif i == 0 and i != last and word[i+1] in frozenset('PT'):
                 ipa += 'ʃ'
             elif i != last and word[i+1] in _vowels:
@@ -551,8 +554,6 @@ def mhg_ipa(word):
                 ipa += 't'
         elif word[i] == 'V':
             ipa += 'f'
-        elif word[i] == 'W':
-            ipa += 'v'
         elif word[i] == 'X':
             ipa += 'ks'
         elif word[i] == 'Z':
