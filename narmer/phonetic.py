@@ -524,7 +524,7 @@ def mhg_ipa(word):
             elif word[i:i+3] == 'SCH':
                 ipa += 'ʃ'
                 skip = 2
-            elif word[i:i+2] in frozenset(['sc', 'sk']):
+            elif word[i:i+2] in frozenset(['SC', 'SK']):
                 ipa += 'ʃ'
                 skip = 1
             elif i == 0 and i != last and word[i+1] in frozenset('PT'):
