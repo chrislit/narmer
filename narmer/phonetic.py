@@ -444,7 +444,7 @@ def mhg_ipa(word):
     :rtype: str
     """
     # pylint: disable=too-many-branches
-    _vowels = frozenset('AEIOUYÄÖÜÂÊÎÔÛÆŒĀĒĪŌŪË')
+    _vowels = frozenset('AEIOUYÄÖÜÆŒĀĒĪŌŪË')
 
     word = unicodedata.normalize('NFKC', _unicode(word.upper()))
     word = word.replace('ß', 'SS')
