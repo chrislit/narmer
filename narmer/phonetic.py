@@ -473,8 +473,6 @@ def mhg_ipa(word):
             elif word[i:i+2] == 'CK':
                 ipa += 'k'
                 skip = 1
-            elif i != last and word[i+1] in frozenset('ÄEI'):
-                ipa += 'ts'
             else:
                 ipa += 'k'
         elif word[i] == 'D':
