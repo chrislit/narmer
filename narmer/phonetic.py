@@ -468,12 +468,8 @@ def mhg_ipa(word):
             ipa += word[i].lower()
         elif word[i] == 'C':
             if word[i:i+2] == 'CH':
-                if word[i:i+3] == 'CHS':
-                    ipa += 'ks'
-                    skip = 2
-                else:
-                    ipa += 'x'
-                    skip = 1
+                ipa += 'x'
+                skip = 1
             elif word[i:i+2] == 'CK':
                 ipa += 'k'
                 skip = 1
