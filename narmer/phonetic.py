@@ -496,8 +496,10 @@ def mhg_ipa(word):
             else:
                 ipa += 'g'
         elif word[i] == 'H':
-            # H after vowels should already be covered by the vowel rules
-            ipa += 'h'
+            if word[i-1:i] in _vowels and word[i+1:i+2] in _vowels:
+                ipa += 'h'
+            else:
+                ipa += 'x'
         elif word[i] == 'N':
             if word[i:i+2] == 'NG':
                 ipa += 'ŋg'
