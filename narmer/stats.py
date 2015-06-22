@@ -50,6 +50,17 @@ def weissman(r_tar, t_tar, r_src, t_src, alpha=1.0):
     :param float alpha: a scaling constant (1.0 by default)
     :returns: the Weissman score
     :rtype: float
+
+    >>> weissman(1, 1, 1, 1)
+    1.0
+    >>> weissman(1, 1, 1, 5)
+    7248263982714164.0
+    >>> weissman(1.2, 1.6, 4.8, 5)
+    0.8560773855177113
+    >>> weissman(1, 1, 1, 1, alpha=2)
+    2.0
+    >>> weissman(1.2, 1.6, 4.8, 5, alpha=2)
+    1.7121547710354226
     """
     if t_tar <= 0 or t_src <= 0:
         raise ValueError("Compression times must be positive values.")
