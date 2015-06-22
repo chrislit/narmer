@@ -583,7 +583,15 @@ def mhg_ipa(word):
             skip = 1
 
         # -Monophthongs following
-        # ĀĒ
+        elif word[i:i+2] == 'IU':
+            skip = 1
+            ipa += 'yː'
+        elif word[i:i+2] == 'AE':
+            skip = 1
+            ipa += 'ɛː'
+        elif word[i:i+2] == 'OE':
+            skip = 1
+            ipa += 'øː'
         elif word[i] == 'Ā':
             ipa += 'aː'
         elif word[i:i+2] == 'AA':
@@ -623,21 +631,12 @@ def mhg_ipa(word):
             ipa += 'y'
         elif word[i] == 'Æ':
             ipa += 'ɛː'
-        elif word[i:i+2] == 'AE':
-            skip = 1
-            ipa += 'ɛː'
         elif word[i] == 'Ä':
             ipa += 'ɛ'
         elif word[i] == 'Œ':
             ipa += 'øː'
-        elif word[i:i+2] == 'OE':
-            skip = 1
-            ipa += 'øː'
         elif word[i] == 'Ö':
             ipa += 'ø'
-        elif word[i:i+2] == 'IU':
-            skip = 1
-            ipa += 'yː'
         elif word[i] == 'Ü':
             ipa += 'y'
         elif word[i] == 'Ë':
