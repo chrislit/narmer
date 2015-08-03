@@ -77,7 +77,7 @@ class GermanIPATestCases(unittest.TestCase):
         self.assertEqual(german_ipa('Bezsch'), 'betʃ')
         self.assertEqual(german_ipa('Zimmer'), 'tsimmer')
         self.assertEqual(german_ipa('Eichhorn'), 'aiçhorn')
-        self.assertEqual(german_ipa('Löwenbräu'), 'løvenbroy')
+        self.assertEqual(german_ipa('Löwenbräu'), 'løvenbrøy')
         self.assertEqual(german_ipa('graue'), 'graue')
         self.assertEqual(german_ipa('singen'), 'ziŋen')
         self.assertEqual(german_ipa('Volk'), 'folk')
