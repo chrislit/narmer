@@ -45,6 +45,17 @@ def german_ipa(word, period="nhg"):
 
     :returns: the German word's approximate IPA equivalent
     :rtype: str
+
+    >>> german_ipa('Ehre')
+    'ere'
+    >>> german_ipa('Kohl')
+    'kol'
+    >>> german_ipa('Schifffahrt')
+    'ʃifffart'
+    >>> german_ipa('Schiller')
+    'ʃiller'
+    >>> german_ipa('Tschechien')
+    'tʃeçin'
     """
     period_map = {'nhg': nhg_ipa,
                   'enhg': enhg_ipa,
@@ -70,6 +81,17 @@ def nhg_ipa(word):
     :param str word: the NHG word to transcribe to IPA
     :returns: the NHG word's approximate IPA equivalent
     :rtype: str
+
+    >>> nhg_ipa('Ehre')
+    'ere'
+    >>> nhg_ipa('Kohl')
+    'kol'
+    >>> nhg_ipa('Schifffahrt')
+    'ʃifffart'
+    >>> nhg_ipa('Schiller')
+    'ʃiller'
+    >>> nhg_ipa('Tschechien')
+    'tʃeçin'
     """
     # pylint: disable=too-many-branches
     _vowels = frozenset('AEIOUYÄÖÜ')

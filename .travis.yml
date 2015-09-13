@@ -1,7 +1,12 @@
 language: python
 python:
+  #- pypy
   - 2.7
   - 3.3
+  - 3.4
+  #- 3.5-dev
+  #- nightly
+  #- pypy3  
 
 # Install packages
 install:
