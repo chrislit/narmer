@@ -677,10 +677,13 @@ def ohg_ipa(word):
     :rtype: str
     """
     # pylint: disable=too-many-branches
-    _vowels = frozenset('AEIOUYÄÖÜ')
+    _vowels = frozenset('AEIOUĀĒĪŌŪË')
 
     word = unicodedata.normalize('NFKC', _unicode(word.upper()))
     word = word.replace('ß', 'SS')
+
+    for ch_from, ch_to in zip('ÂÊÎÔÛ', 'ĀĒĪŌŪ'):
+        word = word.replace(ch_from, ch_to)
 
     # word = ''.join([c for c in word if c in
     #                 frozenset('ABCDEFGIKLMNOPQRSTUVXYZ')])
