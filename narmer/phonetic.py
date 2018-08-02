@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright 2015 by Christopher C. Little.
+# Copyright 2015-2018 by Christopher C. Little.
 # This file is part of Narmer.
 #
 # Narmer is free software: you can redistribute it and/or modify
@@ -23,11 +23,12 @@ The phonetic module implements phonetic algorithms including:
     - german_ipa
 """
 
-from __future__ import unicode_literals
-from __future__ import division
-from abydos._compat import _unicode, _range
+from __future__ import division, unicode_literals
+
 import unicodedata
 
+from six import text_type
+from six.moves import range
 
 def german_ipa(word, period="nhg"):
     """German to IPA
@@ -96,7 +97,7 @@ def nhg_ipa(word):
     # pylint: disable=too-many-branches
     _vowels = frozenset('AEIOUYÄÖÜ')
 
-    word = unicodedata.normalize('NFKC', _unicode(word.upper()))
+    word = unicodedata.normalize('NFKC', text_type(word.upper()))
     word = word.replace('ß', 'SS')
 
     # word = ''.join([c for c in word if c in
@@ -105,7 +106,7 @@ def nhg_ipa(word):
     ipa = ''
     last = len(word)-1
     skip = 0
-    for i in _range(len(word)):
+    for i in range(len(word)):
         if skip:
             skip -= 1
             continue
@@ -282,7 +283,7 @@ def enhg_ipa(word):
     # pylint: disable=too-many-branches
     _vowels = frozenset('AEIOUYÄÖÜ')
 
-    word = unicodedata.normalize('NFKC', _unicode(word.upper()))
+    word = unicodedata.normalize('NFKC', text_type(word.upper()))
     word = word.replace('ß', 'SS')
 
     # word = ''.join([c for c in word if c in
@@ -291,7 +292,7 @@ def enhg_ipa(word):
     ipa = ''
     last = len(word)-1
     skip = 0
-    for i in _range(len(word)):
+    for i in range(len(word)):
         if skip:
             skip -= 1
             continue
@@ -468,7 +469,7 @@ def mhg_ipa(word):
     # pylint: disable=too-many-branches
     _vowels = frozenset('AEIOUYÄÖÜÆŒĀĒĪŌŪË')
 
-    word = unicodedata.normalize('NFKC', _unicode(word.upper()))
+    word = unicodedata.normalize('NFKC', text_type(word.upper()))
     word = word.replace('ß', 'SS')
 
     for ch_from, ch_to in zip('ÂÊÎÔÛ', 'ĀĒĪŌŪ'):
@@ -480,7 +481,7 @@ def mhg_ipa(word):
     ipa = ''
     last = len(word)-1
     skip = 0
-    for i in _range(len(word)):
+    for i in range(len(word)):
         if skip:
             skip -= 1
             continue
@@ -679,7 +680,7 @@ def ohg_ipa(word):
     # pylint: disable=too-many-branches
     _vowels = frozenset('AEIOUĀĒĪŌŪË')
 
-    word = unicodedata.normalize('NFKC', _unicode(word.upper()))
+    word = unicodedata.normalize('NFKC', text_type(word.upper()))
     word = word.replace('ß', 'SS')
 
     for ch_from, ch_to in zip('ÂÊÎÔÛ', 'ĀĒĪŌŪ'):
@@ -691,7 +692,7 @@ def ohg_ipa(word):
     ipa = ''
     last = len(word)-1
     skip = 0
-    for i in _range(len(word)):
+    for i in range(len(word)):
         if skip:
             skip -= 1
             continue

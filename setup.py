@@ -45,5 +45,5 @@ setup(
       long_description='\n\n'.join([readfile(f) for f in ('README.rst',
                                                           'HISTORY.rst',
                                                           'AUTHORS.rst')]),
-      install_requires=['abydos'],
+      install_requires=['six'],
       )
