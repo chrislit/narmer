@@ -16,23 +16,24 @@
 # You should have received a copy of the GNU General Public License
 # along with Narmer. If not, see <http://www.gnu.org/licenses/>.
 
-"""narmer.tests.test_stats
+"""narmer.tests.test_stats.
 
 This module contains unit tests for narmer.stats
 """
 
 from __future__ import unicode_literals
-import unittest
-from narmer.stats import weissman
+
 import math
+import unittest
+
+from narmer.stats import weissman
 
 
 class WeissmanTestCases(unittest.TestCase):
-    """test cases for abydos.stats.weissman
-    """
+    """Test abydos.stats.weissman."""
+
     def test_weissman(self):
-        """test abydos.stats.weissman
-        """
+        """Test abydos.stats.weissman."""
         self.assertRaises(ValueError, weissman, 0, 1, 1, 1)
         self.assertRaises(ValueError, weissman, 1, 0, 1, 1)
         self.assertRaises(ValueError, weissman, 1, 1, 0, 1)

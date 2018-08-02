@@ -16,22 +16,23 @@
 # You should have received a copy of the GNU General Public License
 # along with Narmer. If not, see <http://www.gnu.org/licenses/>.
 
-"""narmer.tests.test_phonetic
+"""narmer.tests.test_phonetic.
 
 This module contains unit tests for narmer.phonetic
 """
 
 from __future__ import unicode_literals
+
 import unittest
+
 from narmer.phonetic import german_ipa
 
 
 class GermanIPATestCases(unittest.TestCase):
-    """test cases for abydos.phonetic.german_ipa
-    """
+    """Test abydos.phonetic.german_ipa."""
+
     def test_german_ipa(self):
-        """test abydos.phonetic.german_ipa
-        """
+        """Test abydos.phonetic.german_ipa."""
         self.assertEqual(german_ipa(''), '')
 
         # https://en.wikipedia.org/wiki/German_orthography
@@ -90,6 +91,7 @@ class GermanIPATestCases(unittest.TestCase):
         self.assertEqual(german_ipa('Küh-Bach'), 'kybax')
         self.assertEqual(german_ipa('Frohe'), 'froe')
         self.assertEqual(german_ipa('ohne'), 'one')
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -16,7 +16,7 @@ Narmer
    :target: https://landscape.io/github/narmer/abydos/master
    :alt: Code Health
 
-.. image:: https://img.shields.io/badge/Pylint-9.78/10-green.svg
+.. image:: https://img.shields.io/badge/Pylint-9.94/10-green.svg
    :target: #
    :alt: Pylint Score
 
@@ -24,7 +24,7 @@ Narmer
    :target: #
    :alt: pycodestyle Errors
 
-.. image:: https://img.shields.io/badge/flake8-48-yellowgreen.svg
+.. image:: https://img.shields.io/badge/flake8-6-green.svg
    :target: #
    :alt: flake8 Errors
 

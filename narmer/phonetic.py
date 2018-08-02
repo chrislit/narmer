@@ -16,7 +16,7 @@
 # You should have received a copy of the GNU General Public License
 # along with Narmer. If not, see <http://www.gnu.org/licenses/>.
 
-"""narmer.phonetic
+"""narmer.phonetic.
 
 The phonetic module implements phonetic algorithms including:
 
@@ -30,8 +30,9 @@ import unicodedata
 from six import text_type
 from six.moves import range
 
-def german_ipa(word, period="nhg"):
-    """German to IPA
+
+def german_ipa(word, period='nhg'):
+    """Convert German to IPA.
 
     Wrapper for other, more specific functions to convert
     German of various periods to IPA.
@@ -72,7 +73,7 @@ def german_ipa(word, period="nhg"):
 
 
 def nhg_ipa(word):
-    """New High German to IPA
+    """Convert New High German to IPA.
 
     This is based largely on the orthographic mapping described at:
     https://en.wikipedia.org/wiki/German_orthography
@@ -272,7 +273,7 @@ def nhg_ipa(word):
 
 
 def enhg_ipa(word):
-    """Early New High German to IPA
+    """Convert Early New High German to IPA.
 
     This is based on TODO
 
@@ -458,7 +459,7 @@ def enhg_ipa(word):
 
 
 def mhg_ipa(word):
-    """Middle High German to IPA
+    """Convert Middle High German to IPA.
 
     This is based on http://users.clas.ufl.edu/hasty/resources/CHAPTER1.HTM
 
@@ -669,7 +670,7 @@ def mhg_ipa(word):
 
 
 def ohg_ipa(word):
-    """Old High German to IPA
+    """Convert Old High German to IPA.
 
     This is based on TODO
 

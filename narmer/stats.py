@@ -16,7 +16,7 @@
 # You should have received a copy of the GNU General Public License
 # along with Narmer. If not, see <http://www.gnu.org/licenses/>.
 
-"""narmer.stats
+"""narmer.stats.
 
 The stats module defines functions for calculating various statistical data
 about linguistic objects, including:
@@ -24,14 +24,14 @@ about linguistic objects, including:
     - Weissman score calculation
 """
 
-from __future__ import unicode_literals
-from __future__ import division
+from __future__ import division, unicode_literals
+
 import math
 import sys
 
 
 def weissman(r_tar, t_tar, r_src, t_src, alpha=1.0):
-    """Weissman score based on entered statistics
+    r"""Calculate Weissman score based on entered statistics.
 
     The score is:
     :math:`W = α \\cdot \\frac{r_{tar}}{r_{src}} \\cdot
@@ -63,9 +63,9 @@ def weissman(r_tar, t_tar, r_src, t_src, alpha=1.0):
     1.7121547710354226
     """
     if t_tar <= 0 or t_src <= 0:
-        raise ValueError("Compression times must be positive values.")
+        raise ValueError('Compression times must be positive values.')
     elif r_tar <= 0 or r_src <= 0:
-        raise ValueError("Compression ratios must be positive values.")
+        raise ValueError('Compression ratios must be positive values.')
     elif t_src == t_tar:
         return alpha * (r_tar / r_src)
     elif t_tar == 1:
@@ -74,5 +74,4 @@ def weissman(r_tar, t_tar, r_src, t_src, alpha=1.0):
 
     if r_src == r_tar:
         return alpha * (math.log(t_src) / math.log(t_tar))
-    else:
-        return alpha * (r_tar / r_src) * (math.log(t_src) / math.log(t_tar))
+    return alpha * (r_tar / r_src) * (math.log(t_src) / math.log(t_tar))

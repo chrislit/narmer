@@ -16,7 +16,7 @@
 # You should have received a copy of the GNU General Public License
 # along with Narmer. If not, see <http://www.gnu.org/licenses/>.
 
-"""narmer
+"""narmer.
 
 Narmer NLP/IR library by Christopher C. Little
 
