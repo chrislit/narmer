@@ -13,7 +13,7 @@ Narmer
    :alt: Code Climate
 
 .. image:: https://landscape.io/github/chrislit/narmer/master/landscape.svg?style=flat
-   :target: https://landscape.io/github/narmer/abydos/master
+   :target: https://landscape.io/github/chrislit/narmer/master
    :alt: Code Health
 
 .. image:: https://img.shields.io/badge/Pylint-9.94/10-green.svg
