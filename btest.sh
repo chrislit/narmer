@@ -1,20 +1,38 @@
 #!/bin/sh
 
-sudo rm -rf ./build
+quick_mode=0
+clean=0
+while [ "$1" != "" ]; do
+    case $1 in
+        -q | --quick | -qc) quick_mode=1
+    esac
+    case $1 in
+	-c | --clean | -qc) clean=1
+    esac
+    shift
+done
+
+if [ "$clean" = "1" ]; then
+    ./cleanup.sh
+fi
+
 python setup.py build
-sudo python setup.py install
 
-sudo rm -rf ./build
-python3 setup.py build
-sudo python3 setup.py install
+python setup.py sdist
+python setup.py bdist_wheel
 
-sudo python3 setup.py sdist
-sudo python3 setup.py bdist_wheel
+python setup.py install
 
-nosetests -v --with-coverage --cover-erase --cover-html --cover-branches --cover-package=narmer .
-nosetests3 -v --with-coverage --cover-erase --cover-html --cover-branches --cover-package=narmer .
+if [ "$quick_mode" = "0" ]; then
+    nosetests .
 
-pylint --rcfile=pylint.rc narmer > pylint.log
-pep8 -v --statistics --exclude=.git,__pycache__,build . > pep8.log
+    pylint --rcfile=pylint.rc narmer > pylint.log
+    pycodestyle -v --statistics --exclude=.git,__pycache__,build,dist,docs . > pycodestyle.log
+    flake8 . > flake8.log
 
-./badge_update.py
+    ./badge_update.py
+fi
+
+sphinx-apidoc -F -o docs narmer
+cd docs
+make html epub xelatexpdf >> /dev/null
