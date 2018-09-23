@@ -16,15 +16,15 @@ Narmer
    :target: https://landscape.io/github/chrislit/narmer/master
    :alt: Code Health
 
-.. image:: https://img.shields.io/badge/Pylint-9.94/10-green.svg
+.. image:: https://img.shields.io/badge/Pylint-9.88/10-green.svg
    :target: #
    :alt: Pylint Score
 
-.. image:: https://img.shields.io/badge/pycodestyle-0-brightgreen.svg
+.. image:: https://img.shields.io/badge/pycodestyle-7-green.svg
    :target: #
    :alt: pycodestyle Errors
 
-.. image:: https://img.shields.io/badge/flake8-6-green.svg
+.. image:: https://img.shields.io/badge/flake8-10-green.svg
    :target: #
    :alt: flake8 Errors
 
